@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Journal – AI Emotion Tracker</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🌱 Mood Journal – AI Emotion Tracker</h1>
+    <p>Track your emotions over time. Type your journal entry, let AI analyse it, and watch your mood trend.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Write a Journal Entry</h2>
+      <form id="entry-form">
+        <textarea id="entry-text" placeholder="How are you feeling today?" rows="5"></textarea>
+        <button type="submit">Analyze & Save</button>
+      </form>
+      <p class="hint">If you don't set a Hugging Face token, a simple offline fallback will run.</p>
+      <div id="status"></div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Mood Trend</h2>
+        <canvas id="moodChart"></canvas>
+      </div>
+      <div class="card">
+        <h2>Entries</h2>
+        <ul id="entries-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Built with HTML/CSS/JS • Flask • MySQL/SQLite • Hugging Face Inference API • Chart.js</small>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
